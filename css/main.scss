@@ -1,0 +1,48 @@
+// custom variables
+
+$primary: #f5df4d;
+$secondary: rgb(147, 149, 151);
+$light: rgb(172, 163, 202);
+
+// import the functions & variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+    "white": #fff,
+    "lt-grn": #70EB00
+);
+
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+//second map-merge
+$custom-theme-colors-two: (
+    "orng": #EB8B0E,
+    "dk-grn": #012619
+);
+
+$theme-colors: map-merge($custom-theme-colors-two, $theme-colors);
+
+
+//fixes map-merge()
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge(
+  $theme-colors-rgb,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body":  to-rgb($body-color)
+  )
+);
+
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+
+// import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// h1 {
+//     background-color: $primary;
+// }

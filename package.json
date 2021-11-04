@@ -1,0 +1,22 @@
+{
+  "name": "bs_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jargam/bootstrap_demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jargam/bootstrap_demo/issues"
+  },
+  "homepage": "https://github.com/jargam/bootstrap_demo#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
